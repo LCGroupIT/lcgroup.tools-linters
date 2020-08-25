@@ -14,7 +14,8 @@
         "copy:assets": "npm run cpx -- linters/**/* dist && npm run cpx -- README.md dist && npm run cpx -- CHANGELOG.md dist && npm run cpx -- package.json dist",
         "build": "npm run clean && npm run copy:assets",
         "version": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s -r && npm run build",
-        "release": "npx np --contents dist"
+        "release": "npx np --contents dist",
+        "postrelease": "git add package.json package-lock.json CHANGELOG.md && git commit -m \"🎉 version released 🎉\" && git push"
     },
     "np": {
         "contents": "dist",
@@ -45,26 +46,26 @@
         "np": "^6.2.3",
         "rimraf": "^2.6.3"
     },
-    "peerDependencies": {
+    "dependencies": {
         "@angular-eslint/builder": "0.0.1-alpha.32",
         "@angular-eslint/eslint-plugin": "0.0.1-alpha.32",
         "@angular-eslint/eslint-plugin-template": "0.0.1-alpha.32",
         "@angular-eslint/schematics": "0.0.1-alpha.32",
         "@angular-eslint/template-parser": "0.0.1-alpha.32",
         "@typescript-eslint/eslint-plugin": "2.31.0",
-        "@typescript-eslint/eslint-plugin-tslint": "^3.4.0",
+        "@typescript-eslint/eslint-plugin-tslint": "3.6.0",
         "@typescript-eslint/parser": "2.31.0",
-        "eslint": "^7.3.1",
-        "eslint-config-prettier": "^6.11.0",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-prettier": "^3.1.4",
+        "eslint": "7.3.1",
+        "eslint-config-prettier": "6.11.0",
+        "eslint-plugin-node": "11.1.0",
+        "eslint-plugin-prettier": "3.1.4",
         "eslint-plugin-rxjs": "0.0.2-beta.26",
-        "prettier": "^2.0.5",
-        "stylelint": "^13.4.0",
-        "stylelint-config-prettier": "^8.0.2",
-        "stylelint-config-standard": "^20.0.0",
-        "stylelint-order": "^4.1.0",
-        "stylelint-prettier": "^1.1.2"
+        "prettier": "2.0.5",
+        "stylelint": "13.4.0",
+        "stylelint-config-prettier": "8.0.2",
+        "stylelint-config-standard": "20.0.0",
+        "stylelint-order": "4.1.0",
+        "stylelint-prettier": "1.1.2"
     },
     "publishConfig": {
         "access": "public"
