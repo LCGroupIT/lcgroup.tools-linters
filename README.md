@@ -1,13 +1,52 @@
 # @lcgroup.tools/linters
 ESlint rules for Angular applications.
 
-### Setup
+## Setup
 Install from npm
 ````
+npm i @lcgroup.tools/linters --save-dev
 ````
-Include configuration to .eslintrc
+
+### ESLint + Prettier
+Include configurations:
+
+``.eslintrc.js``
 ````
+module.exports = {
+    extends: ['./node_modules/@lcgroup.tools/linters/eslint'],
+};
+````
+
+``.prettierrc.js``
+````
+module.exports = {
+    ...require('./node_modules/@lcgroup.tools/linters/prettier/prettier.config.js'),
+};
+````
+Add npm-script:
+```
+"lint": "npx eslint --config ./.eslintrc.js --debug \"src/**/*.{ts}\"",
+"lint:fix": "npx eslint --config ./.eslintrc.js --fix \"src/**/*.{ts}\""
+```
+
+Add ``.eslintignore`` file
+```
+dist
+node_modules
+coverage
+*.less
+*.css
+```
+
+### Stylelint
+``.stylelintrc``
+```
 {
-  "extends": ["@lcgroup.tools/linters"]
+    "extends": ["./node_modules/@lcgroup.tools/linters/stylelint/base.stylelint.json"],
 }
-````
+```
+Add npm-script:
+```
+"lint": "npx stylelint --config ./.stylelintrc \"src/**/*.less\"",
+"lint:fix": "npx stylelint --config ./.stylelintrc --fix \"src/**/*.less\""
+```
