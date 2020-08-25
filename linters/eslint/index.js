@@ -6,7 +6,8 @@ module.exports = {
     },
     extends: [
         'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@angular-eslint/all'
+        'plugin:@angular-eslint/all',
+        'plugin:prettier/recommended'
     ],
     rules: {
         '@angular-eslint/no-host-metadata-property': 'off',

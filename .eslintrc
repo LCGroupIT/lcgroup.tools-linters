@@ -1,6 +1,6 @@
 {
   "root": true,
   "extends": [
-    "./index.js"
+    "./linters/eslint/index.js"
   ]
 }
