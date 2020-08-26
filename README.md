@@ -42,7 +42,7 @@ coverage
 ``.stylelintrc``
 ```
 {
-    "extends": ["./node_modules/@lcgroup.tools/linters/stylelint/base.stylelint.json"],
+    "extends": ["./node_modules/@lcgroup.tools/linters/stylelint/stylelint.config.json"],
 }
 ```
 Add npm-script:
