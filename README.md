@@ -25,8 +25,8 @@ module.exports = {
 ````
 Add npm-script:
 ```
-"lint": "npx eslint --config ./.eslintrc.js --debug \"src/**/*.{ts}\"",
-"lint:fix": "npx eslint --config ./.eslintrc.js --fix \"src/**/*.{ts}\""
+"lint": "npx eslint --config ./.eslintrc.js --debug "src/**/*.{js,ts,html}"",
+"lint:fix": "npx eslint --config ./.eslintrc.js --fix --debug "src/**/*.{js,ts,html}""
 ```
 
 Add ``.eslintignore`` file
