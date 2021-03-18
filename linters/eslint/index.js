@@ -4,110 +4,117 @@ module.exports = {
         browser: true,
         es2020: true,
     },
-    extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@angular-eslint/all',
-        'plugin:prettier/recommended'
-    ],
-    rules: {
-        '@angular-eslint/no-host-metadata-property': 'off',
-        '@angular-eslint/use-injectable-provided-in': 'off',
-        '@angular-eslint/use-component-view-encapsulation': 'off',
-        '@angular-eslint/no-forward-ref': 'off',
-        '@angular-eslint/no-output-native': 'off',
-        '@angular-eslint/template/cyclomatic-complexity': 'off',
-
-        'no-var': 'error',
-        '@typescript-eslint/no-unused-vars': ['warn', {vars: 'all', args: 'none'}],
-        '@typescript-eslint/array-type': [
-            'error',
-            {
-                default: 'array-simple',
+    overrides: [
+        {
+            files: ['*.ts'],
+            parserOptions: {
+                "createDefaultProgram": true
             },
-        ],
-        quotes: [
-            'error',
-            'single',
-            {
-                avoidEscape: true,
-            },
-        ],
-        'max-len': [
-            'error',
-            {
-                code: 160,
-                ignoreUrls: true,
-                ignoreComments: true,
-                ignorePattern: '^import |^export +(.*?)',
-            },
-        ],
+            extends: [
+                'plugin:@typescript-eslint/eslint-recommended',
+                'plugin:@angular-eslint/all',
+                'plugin:prettier/recommended'
+            ],
+            rules: {
+                '@angular-eslint/no-host-metadata-property': 'off',
+                '@angular-eslint/use-injectable-provided-in': 'off',
+                '@angular-eslint/use-component-view-encapsulation': 'off',
+                '@angular-eslint/no-forward-ref': 'off',
+                '@angular-eslint/no-output-native': 'off',
+                '@angular-eslint/template/cyclomatic-complexity': 'off',
 
-        'grouped-accessor-pairs': ['error', 'setBeforeGet'],
-        '@typescript-eslint/naming-convention': [
-            'error',
-            {
-                selector: 'typeLike',
-                format: ['PascalCase'],
-            },
-            {
-                selector: 'property',
-                modifiers: ['private'],
-                format: ['camelCase'],
-                leadingUnderscore: 'require',
-            },
-            {
-                selector: 'variable',
-                format: ['camelCase', 'UPPER_CASE'],
-                leadingUnderscore: 'allow',
-            },
-        ],
-        '@typescript-eslint/member-ordering': [
-            'error',
-            {
-                default: [
-                    // Index signature
-                    'signature',
+                'no-var': 'error',
+                '@typescript-eslint/no-unused-vars': ['warn', {vars: 'all', args: 'none'}],
+                '@typescript-eslint/array-type': [
+                    'error',
+                    {
+                        default: 'array-simple',
+                    },
+                ],
+                quotes: [
+                    'error',
+                    'single',
+                    {
+                        avoidEscape: true,
+                    },
+                ],
+                'max-len': [
+                    'error',
+                    {
+                        code: 160,
+                        ignoreUrls: true,
+                        ignoreComments: true,
+                        ignorePattern: '^import |^export +(.*?)',
+                        ignoreRegExpLiterals: true,
+                    },
+                ],
 
-                    // Fields
-                    'private-static-field',
-                    'protected-static-field',
-                    'public-static-field',
+                'grouped-accessor-pairs': ['error', 'setBeforeGet'],
+                '@typescript-eslint/naming-convention': [
+                    'error',
+                    {
+                        selector: 'typeLike',
+                        format: ['PascalCase'],
+                    },
+                    {
+                        selector: 'property',
+                        modifiers: ['private'],
+                        format: ['camelCase'],
+                        leadingUnderscore: 'require',
+                    },
+                    {
+                        selector: 'variable',
+                        format: ['camelCase', 'UPPER_CASE'],
+                        leadingUnderscore: 'allow',
+                    },
+                ],
+                '@typescript-eslint/member-ordering': [
+                    'error',
+                    {
+                        default: [
+                            // Index signature
+                            'signature',
 
-                    'private-instance-field',
-                    'private-decorated-field',
-                    'protected-decorated-field',
-                    'protected-instance-field',
-                    'public-decorated-field',
-                    'public-instance-field',
+                            // Fields
+                            'private-static-field',
+                            'protected-static-field',
+                            'public-static-field',
 
-                    'private-abstract-field',
-                    'protected-abstract-field',
-                    'public-abstract-field',
+                            'private-instance-field',
+                            'private-decorated-field',
+                            'protected-decorated-field',
+                            'protected-instance-field',
+                            'public-decorated-field',
+                            'public-instance-field',
 
-                    'private-constructor',
-                    'protected-constructor',
-                    'public-constructor',
+                            'private-abstract-field',
+                            'protected-abstract-field',
+                            'public-abstract-field',
 
-                    'public-static-method',
-                    'protected-static-method',
-                    'private-static-method',
+                            'private-constructor',
+                            'protected-constructor',
+                            'public-constructor',
 
-                    'public-decorated-method',
-                    'protected-decorated-method',
-                    'private-decorated-method',
+                            'public-static-method',
+                            'protected-static-method',
+                            'private-static-method',
 
-                    'public-instance-method',
-                    'protected-instance-method',
-                    'private-instance-method',
+                            'public-decorated-method',
+                            'protected-decorated-method',
+                            'private-decorated-method',
 
-                    'public-abstract-method',
-                    'protected-abstract-method',
-                    'private-abstract-method',
+                            'public-instance-method',
+                            'protected-instance-method',
+                            'private-instance-method',
+
+                            'public-abstract-method',
+                            'protected-abstract-method',
+                            'private-abstract-method',
+                        ],
+                    },
                 ],
             },
-        ],
-    },
-    overrides: [
+        },
         {
             files: ['*.ts'],
             rules: {
@@ -121,5 +128,15 @@ module.exports = {
                 'rxjs/prefer-observer': 'error',
             },
         },
-    ],
-};
+        {
+            files: [
+                '*.html'
+            ],
+            extends: [
+                'plugin:@angular-eslint/template/recommended'
+            ],
+            rules: {}
+        }
+    ]
+}
+
