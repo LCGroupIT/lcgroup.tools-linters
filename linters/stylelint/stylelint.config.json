@@ -1,7 +1,7 @@
 {
-  "plugins": ["stylelint-prettier", "stylelint-order"],
+  "plugins": ["stylelint-prettier", "stylelint-order", "stylelint-scss"],
   "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
-  "ignoreFiles": ["!**/*.less","!**/*.css"],
+  "ignoreFiles": ["!**/*.less","!**/*.css", "!**/*.scss"],
   "rules": {
     "prettier/prettier": true,
     "indentation": null,
@@ -57,6 +57,7 @@
       {
         "unspecified": "bottom"
       }
-    ]
+    ],
+    "scss/at-rule-no-unknown": true
   }
 }
