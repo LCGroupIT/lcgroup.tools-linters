@@ -1,3 +1,12 @@
+# [2.0.0-1](https://github.com/LCGroupIT/lcgroup.tools-linters/compare/v2.0.0-0...v2.0.0-1) (2021-11-18)
+
+
+### Bug Fixes
+
+* use double-hyphen character for correct parsing ([8dd84d4](https://github.com/LCGroupIT/lcgroup.tools-linters/commit/8dd84d4f8f195be794a946c19ab68eaffbcb6fae))
+
+
+
 ## [2.0.0-0](https://github.com/LCGroupIT/lcgroup.tools-linters/compare/v1.0.1...v2.0.0-0) (2021-11-17)
 
 
