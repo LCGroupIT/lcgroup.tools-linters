@@ -1,3 +1,7 @@
+## [2.0.1](https://github.com/LCGroupIT/lcgroup.tools-linters/compare/v2.0.0-3...v2.0.1) (2021-11-19)
+
+
+
 # [2.0.0-3](https://github.com/LCGroupIT/lcgroup.tools-linters/compare/v2.0.0-2...v2.0.0-3) (2021-11-19)
 
 
