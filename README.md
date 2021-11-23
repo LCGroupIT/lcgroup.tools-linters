@@ -49,12 +49,19 @@ coverage
 
 ### Stylelint
 
-``.stylelintrc``
+``stylelint.config.js``
 
-```json
-{
-    "extends": ["./node_modules/@lcgroup.tools/linters/stylelint/stylelint.config.json"],
-}
+```javascript
+const styleLint = require('@lcgroup.tools/linters/stylelint/stylelint.config.js');
+
+module.exports = {
+    ...styleLint,
+    rules: {
+        ...styleLint.rules,
+        'no-empty-source': null,
+    },
+};
+
 ```
 
 Add npm-script:
