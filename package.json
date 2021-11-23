@@ -1,6 +1,6 @@
 {
     "name": "@lcgroup.tools/linters",
-    "version": "2.0.3-5",
+    "version": "2.0.3-6",
     "description": "LCGroup ESLint configs for Angular apps",
     "license": "MIT",
     "keywords": [
