@@ -47,7 +47,7 @@
         "np": "^6.2.3",
         "rimraf": "^2.6.3"
     },
-    "dependencies": {
+    "peerDependencies": {
         "@angular-eslint/builder": "~13.0.1",
         "@angular-eslint/eslint-plugin": "~13.0.1",
         "@angular-eslint/eslint-plugin-template": "~13.0.1",
