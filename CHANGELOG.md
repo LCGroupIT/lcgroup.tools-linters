@@ -1,3 +1,12 @@
+## [2.0.3-6](https://github.com/LCGroupIT/lcgroup.tools-linters/compare/v2.0.3-5...v2.0.3-6) (2021-11-23)
+
+
+### Bug Fixes
+
+* package ([cd2d8e9](https://github.com/LCGroupIT/lcgroup.tools-linters/commit/cd2d8e9f1052595995a0be6749bd4c1ba2a84c47))
+
+
+
 ## [2.0.3-5](https://github.com/LCGroupIT/lcgroup.tools-linters/compare/v2.0.3-4...v2.0.3-5) (2021-11-23)
 
 
