@@ -1,6 +1,6 @@
 {
     "name": "@lcgroup.tools/linters",
-    "version": "2.0.3-5",
+    "version": "2.0.3-4",
     "description": "LCGroup ESLint configs for Angular apps",
     "license": "MIT",
     "keywords": [
@@ -61,8 +61,8 @@
         "eslint-plugin-prefer-arrow": "~1.2.3",
         "eslint-config-prettier": "~8.3.0",
         "eslint-plugin-node": "~11.1.0",
-        "eslint-plugin-prettier": "^3.3.7",
-        "eslint-plugin-rxjs": "~4.0.3",
+        "eslint-plugin-prettier": "~4.0.0",
+        "eslint-plugin-rxjs": "^3.3.7",
         "postcss-less": "~5.0.0",
         "postcss-scss": "~4.0.2",
         "prettier": "~2.4.1",
