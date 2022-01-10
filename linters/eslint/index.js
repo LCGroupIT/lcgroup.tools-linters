@@ -1,5 +1,5 @@
 module.exports = {
-    plugins: ['rxjs'],
+    plugins: ['rxjs', 'unused-imports', 'jsdoc'],
     env: {
         browser: true,
         es2020: true,
@@ -24,7 +24,12 @@ module.exports = {
                 '@angular-eslint/template/cyclomatic-complexity': 'off',
 
                 'no-var': 'error',
-                '@typescript-eslint/no-unused-vars': ['warn', {vars: 'all', args: 'none'}],
+                'no-console': 'error',
+                '@typescript-eslint/explicit-function-return-type': "error",
+                '@typescript-eslint/no-unused-vars': 'off',
+                'unused-imports/no-unused-imports': 'error',
+                'unused-imports/no-unused-vars': ['error', {vars: 'all', args: 'none'}],
+
                 '@typescript-eslint/array-type': [
                     'error',
                     {
@@ -67,6 +72,15 @@ module.exports = {
                         format: ['camelCase', 'UPPER_CASE'],
                         leadingUnderscore: 'allow',
                     },
+                    {
+                        selector: 'classMethod',
+                        format: ['camelCase']
+                    },
+                    {
+                        selector: 'classProperty',
+                        format: ['camelCase'],
+                        leadingUnderscore: 'allow'
+                    }
                 ],
                 '@typescript-eslint/member-ordering': [
                     'error',
@@ -81,11 +95,12 @@ module.exports = {
                             'public-static-field',
 
                             'private-instance-field',
+                            'protected-instance-field',
+                            'public-instance-field',
+
                             'private-decorated-field',
                             'protected-decorated-field',
-                            'protected-instance-field',
                             'public-decorated-field',
-                            'public-instance-field',
 
                             'private-abstract-field',
                             'protected-abstract-field',
@@ -95,10 +110,6 @@ module.exports = {
                             'protected-constructor',
                             'public-constructor',
 
-                            'public-static-method',
-                            'protected-static-method',
-                            'private-static-method',
-
                             'public-decorated-method',
                             'protected-decorated-method',
                             'private-decorated-method',
@@ -107,12 +118,35 @@ module.exports = {
                             'protected-instance-method',
                             'private-instance-method',
 
+                            'public-static-method',
+                            'protected-static-method',
+                            'private-static-method',
+
                             'public-abstract-method',
                             'protected-abstract-method',
                             'private-abstract-method',
                         ],
                     },
                 ],
+
+                'jsdoc/require-jsdoc': [
+                    'error', {
+                        publicOnly: true,
+                        checkConstructors: false,
+                        checkGetters: true,
+                        checkSetters: true,
+                        contexts: [
+                            'ClassDeclaration',
+                            'ClassProperty:not([accessibility=\"private\"]):not([override=true]) > FunctionExpression',
+                            'MethodDefinition:not([accessibility=\"private\"]):not([override=true]) > FunctionExpression',
+                            'FunctionDeclaration',
+                            'inlineCommentBlock',
+                            'TSInterfaceDeclaration',
+                            'TSEnumDeclaration',
+                            'TSTypeAliasDeclaration'
+                        ]
+                    }
+                ]
             },
         },
         {

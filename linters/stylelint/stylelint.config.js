@@ -1,6 +1,3 @@
-const postcssScss = require('postcss-scss');
-const postcssLess = require('postcss-less');
-
 module.exports = {
     plugins: ['stylelint-prettier', 'stylelint-order', 'stylelint-scss'],
     extends: ['stylelint-config-standard', 'stylelint-prettier/recommended'],
@@ -87,11 +84,11 @@ module.exports = {
     overrides: [
         {
             files: ['**/*.less'],
-            customSyntax: postcssLess,
+            customSyntax: 'postcss-less',
         },
         {
             files: ['**/*.scss'],
-            customSyntax: postcssScss,
+            customSyntax: 'postcss-scss',
         },
     ],
 };
