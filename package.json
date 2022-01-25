@@ -11,7 +11,7 @@
     "scripts": {
         "cpx": "npm exec cpx",
         "clean": "npm exec rimraf dist/",
-        "copy:assets": "npm run cpx -- linters/**/* dist && npm run cpx -- README.md dist && npm run cpx -- CHANGELOG.md dist && npm run cpx -- package.json dist",
+        "copy:assets": "npm run cpx -- \"linters/**/*\" dist && npm run cpx -- README.md dist && npm run cpx -- CHANGELOG.md dist && npm run cpx -- package.json dist",
         "build": "npm run clean && npm run copy:assets",
         "version": "npm exec -- conventional-changelog-cli -p angular -i CHANGELOG.md -s -r && npm run build",
         "release": "npm exec -- np --contents ./dist",
